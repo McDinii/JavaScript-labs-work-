@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="100000" http-equiv="refresh">
+    <title>Lab_7</title>
+    <script type="text/javascript" src="Laba_7.js"></script>
+</head>
+<body>
+<form name="form">
+    <fieldset name="fit_form_field">
+        <label>
+<textarea>
+Факультет Информационных Технологий
+</textarea>
+        </label>
+        <p><label>
+            <input type="text" name="inputLastname" placeholder="Фамилия">
+            <br/><input type="text" name="inputName" placeholder="Имя">
+        </label></p>
+        <p><label>
+            Специальность: <select name="special">
+            <option value="ИСиТ">ИСиТ</option>
+            <option value="ПОИТ">ПОИТ</option>
+            <option value="ПОИБМС">ПОИБМС</option>
+            <option value="ДЭВИ">ДЭВИ</option>
+        </select>
+        </label>
+        </p>
+        <div>Курс:</div>
+        <label>
+            <input type="radio" name="course" value="1">1
+            <input type="radio" name="course" value="2">2
+            <input type="radio" name="course" value="3">3
+            <input type="radio" name="course" value="4">4
+        </label>
+        <div>Предметы</div>
+        <label>
+            <input type="checkbox" name="subject" value="0">Информационные системы и технологии
+            <br/><input type="checkbox" name="subject" value="1">Программное обеспечение информационных технологий
+            <br/><input type="checkbox" name="subject" value="2">Программное обеспечение информационных технологий
+            <br/><input type="checkbox" name="subject" value="3">Дизайн электронных и веб-изданий
+        </label>
+        <p><label><input type="submit" value="Отправить" name="submit">
+            <input type="reset" value="Сбросить" name="reset"></label></p>
+        <label>
+            <br/><input type="button" value="Напечатать" name="print" onclick="form()">
+        </label>
+    </fieldset>
+</form>
+
+</body>
+</html>
