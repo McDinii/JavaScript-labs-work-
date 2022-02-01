@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laba_9</title>
+    <style> #myimg{
+        position: relative;
+    }
+    div{display: block;
+        width: 77px;
+        text-align: center;
+        border: solid 3px black;}
+    </style>
+</head>
+<body id="body">
+<div id="text1" ondragstart="drag_text(this)"  >Tom&Jerry</div>
+<IMG id="myimg" ondragstart="drag_img(this)" src="img/tom.jfif" >
+<SCRIPT>
+    var flag1 = false // нельзя перемещать*/
+    var flag2 = false // нельзя перемещать*/
+    let id_img = document.getElementById("myimg")
+    let id_text1 = document.getElementById("text1")
+    function drag_img(el) {
+        flag1 = true
+    }
+    function drag_text(el) {
+        flag2 = true
+    }
+
+    document.onmousemove = function (el) {
+        if (flag1) { // если можно перемещать
+            id_img.style.top = el.clientY-100 + "px"
+            id_img.style.left = el.clientX-150 + "px"
+        }
+    }
+    document.onmouseup = function (){
+        flag1 = false
+        flag2 =false
+    }
+    document.onmousemove = function (el) {
+        if (flag2) { // если можно перемещать
+            id_text1.style.top = el.clientY-100 + "px"
+            id_text1.style.left = el.clientX-150 + "px"
+        }
+    }
+
+
+</SCRIPT>
+</body>
+</html>
