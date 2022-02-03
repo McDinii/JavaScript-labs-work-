@@ -54,10 +54,20 @@
 <img id="spider" onclick="task_3(this)"  src="img/spider.jpg" alt="spider">
 
 </div>
-<h1>Task №4-5</h1>
-<div id = "#task4">
-<img src="img/blue.bmp" alt="blue" style="position: absolute;">
-</div>
+<h1> Task №4-5</h1>
+<form name='first'>
+    <input type="radio" name="line_type" value='x*x'>x^2
+    <input type="radio" name="line_type" value='x*x*x'>x^3
+    <input type="radio" name="line_type" value='Math.sin(x)'>SIN(X)
+    <input type="radio" name="line_type" value='Math.cos(x)'>COS(X)
+    <select>
+        <option value='orange'>Оранжевый</option>
+        <option value='green'>Зеленый</option>
+        <option value='blue'>Синий</option>
+        <option value='purple'>Фиолетовый</option>
+    </select>
+</form>
+<button onclick="line()">draw</button>
 <script type="text/javascript" src="../jquery-3.6.0.js"></script>
 <script type="text/javascript" src="../jquery-ui.min.js"></script>
 
