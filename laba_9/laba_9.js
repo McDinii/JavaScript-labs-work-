@@ -55,19 +55,36 @@ function task_3(el) {
     } )
 }
 
-function line( x1, y1, x2, y2,w)
-{
-    /*xl, yl – начало линии, х2, у2 – конец, n – толщина */
-    var xstr = "" // строка тегов для записи в HTML-документ
-    var xstr0 = '<img src="img/blue.bmp" width="'+w+'" style ="position:absolute; '
-    var k = (y2 - y1 )/(x2 - x1) // коэффициент наклона линии
-    var x = x1 // начальное значение координаты х
-    /* Формирование строки, содержащей теги <IMG. . . >: */
-    let timerId = setInterval( function (){ while (x <= x2) {
-        xstr += xstr0 + 'top:' + (y1 + k * (x - x1))+'px; left:' + x +'px;"/>'
-        document.write(xstr)
-        x += 10
-    }},20)
-    setTimeout(function (){clearInterval(timerId)},9000)
+let x, y, x2 = 50 , y2=70, color, fnc_to_draw, radio_
 
+function line() {
+    y = y2
+    x = x2
+    radio_ = document.getElementsByName( "line_type" )
+    color = document.getElementsByTagName( "option" )
+
+    for (i = 0; i < radio_.length; i++) {
+        if (radio_[i].checked) {
+            fnc_to_draw = radio_[i].value
+        }
+    }
+    timerID = setInterval( "write(" + fnc_to_draw + ")", 10 )
+    setTimeout( "clearInterval( timerID )", 9000 )
+    for (j = 0; j < color.length; j++) {
+        if (color[j].selected) {
+            color = color[j].value
+
+        }
+    }
 }
+
+/*Формирование строки, содержащей теги <IMG. . . >: */
+function write(fnc_to_draw) {
+    x += 0.1;
+    y = y2 + eval( fnc_to_draw ) * 2
+    document.write( '<img alt="" width="5" src="img/' + color + '.bmp " style="position:relative; top:' + y + 'px;left:' + x + 'px;">' )
+    document.write( '<img alt="" width="5" src="img/' + color + '.bmp " style="position:relative; top:' + y + 'px;left:' + x + 'px;">' )
+}
+
+
+
