@@ -55,7 +55,7 @@ function task_3(el) {
     } )
 }
 
-let x = 0, y = 0, x2 = 50,x3 = 50 , y2 = 70, color, fnc_to_draw, radio_, checkL = 0, checkR = 0
+let x = 0, y = 0, x2 =-10,x3 = 50 , y2 = 150, color, fnc_to_draw, radio_, checkL = 0, checkR = 0
 
 function line() {
     radio_ = document.getElementsByName( "line_type" )
@@ -79,24 +79,27 @@ function line() {
 }
 
 /*Формирование строки, содержащей теги <IMG. . . >: */
-let k = 50
-checkL = x2
+/*let k = 50
+checkL = x2*/
+x = x2
+y = y2
 function writel(fnc_to_draw) {
-    console.log(k)
-    console.log( "L :", checkL )
-    x = ( k -x2 )
-    console.log( "x= 1:", x )
-    k-= 0.1
-    y = 5*(Math.round(-(fnc_to_draw ))+y2)
-    document.write( '<img alt="" width="5" src="img/' + color + '.bmp " style="position:absolute; top:' + y/5 + 'px;left:' + checkL + 'px;">' )
-    checkL--
-    if (checkL-1 === 5) {
+
+   /* x = ( k -x2 )*/
+    x +=0.1
+   /* k-= 0.1
+    y = 5*(Math.round(-(fnc_to_draw ))+y2)*/
+    y = y2 + eval(fnc_to_draw)*30
+    xd = x +10
+    document.write( '<img alt="" width="3" src="img/' + color + '.bmp " style="position:relative; top:' + y + 'px;left:' + xd+ 'px;">' )
+    /*checkL--*/
+    if ( Math.round(x) ===  10/*checkL-1 === 5*/) {
         clearInterval( timerID )
-        timerID2 = setInterval( "writer(" + fnc_to_draw + ")", 10 )
+        /*timerID2 = setInterval( "writer(" + fnc_to_draw + ")", 10 )*/
 
     }
 }
-    checkR=x2
+    /*checkR=x2*/
    /* function writer(fnc_to_draw) {
     console.log( "x= -1:", x )
     console.log( "R :", checkR )
