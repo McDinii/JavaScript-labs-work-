@@ -44,6 +44,7 @@
 
 </head>
 <body id="body">
+<img src="img/blue.bmp" width="5" style ="left:50px;top:70px;position:relative;" alt="">
 <h1>Task №1</h1>
 <div id="text1"   >Tom&Jerry</div>
 <img id="tom"  src="img/tom.jfif" alt="tom"/>
@@ -57,18 +58,21 @@
 <h1> Task №4-5</h1>
 
 <form name='first'>
-    <input type="radio" checked name="line_type" value='x*x'>-x^2
-    <input type="radio" name="line_type" value='x*x*x'>-x^3
-    <input type="radio" name="line_type" value='Math.sin(x)'>SIN(X)
-    <input type="radio" name="line_type" value='Math.cos(x)'>COS(X)
+    <input type="radio" checked name="line_type" value='-x*x'>-x^2
+    <input type="radio" name="line_type" value='-x*x*x'>-x^3
+    <input type="radio" name="line_type" value='Math.sin(-x)'>SIN(X)
+    <input type="radio" name="line_type" value='Math.cos(-x)'>COS(X)
     <select>
-        <option value='orange'>Оранжевый</option>
         <option value='green'>Зеленый</option>
+        <option value='orange'>Оранжевый</option>
         <option value='blue'>Синий</option>
         <option value='purple'>Фиолетовый</option>
     </select>
 </form>
-<button onclick="line()">draw</button>
+
+<button onclick="line()" style="left: 25px; position: relative">draw</button>
+
+
 <script type="text/javascript" src="../jquery-3.6.0.js"></script>
 <script type="text/javascript" src="../jquery-ui.min.js"></script>
 

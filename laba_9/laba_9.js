@@ -55,11 +55,9 @@ function task_3(el) {
     } )
 }
 
-let x, y, x2 = 50 , y2=70, color, fnc_to_draw, radio_
+let x = 0, y = 0, x2 = 50,x3 = 50 , y2 = 70, color, fnc_to_draw, radio_, checkL = 0, checkR = 0
 
 function line() {
-    y = y2
-    x = x2
     radio_ = document.getElementsByName( "line_type" )
     color = document.getElementsByTagName( "option" )
 
@@ -68,8 +66,10 @@ function line() {
             fnc_to_draw = radio_[i].value
         }
     }
-    timerID = setInterval( "write(" + fnc_to_draw + ")", 10 )
-    setTimeout( "clearInterval( timerID )", 9000 )
+    timerID = setInterval( "writel(" + fnc_to_draw + ")", 10 )
+
+
+
     for (j = 0; j < color.length; j++) {
         if (color[j].selected) {
             color = color[j].value
@@ -79,12 +79,33 @@ function line() {
 }
 
 /*Формирование строки, содержащей теги <IMG. . . >: */
-function write(fnc_to_draw) {
-    x += 0.1;
-    y = y2 + eval( fnc_to_draw ) * 2
-    document.write( '<img alt="" width="5" src="img/' + color + '.bmp " style="position:relative; top:' + y + 'px;left:' + x + 'px;">' )
-    document.write( '<img alt="" width="5" src="img/' + color + '.bmp " style="position:relative; top:' + y + 'px;left:' + x + 'px;">' )
+let k = 50
+checkL = x2
+function writel(fnc_to_draw) {
+    console.log(k)
+    console.log( "L :", checkL )
+    x = ( k -x2 )
+    console.log( "x= 1:", x )
+    k-= 0.1
+    y = 5*(Math.round(-(fnc_to_draw ))+y2)
+    document.write( '<img alt="" width="5" src="img/' + color + '.bmp " style="position:absolute; top:' + y/5 + 'px;left:' + checkL + 'px;">' )
+    checkL--
+    if (checkL-1 === 5) {
+        clearInterval( timerID )
+        timerID2 = setInterval( "writer(" + fnc_to_draw + ")", 10 )
+
+    }
 }
-
-
+    checkR=x2
+   /* function writer(fnc_to_draw) {
+    console.log( "x= -1:", x )
+    console.log( "R :", checkR )
+    x += 1 + x2;
+    y = y2 + fnc_to_draw
+    document.write( '<img alt="" width="5" src="img/' + color + '.bmp " style="position:relative; top:' + y + 'px;left:' + x + 'px;">' )
+    checkR++
+    if (checkR ===101) {
+        clearInterval( timerID2)
+        }
+    }*/
 
