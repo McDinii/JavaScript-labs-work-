@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Jquery</title>
+	<style type="text/css">
+	   .foorm {
+position: absolute;
+left: 50px;
+top: 730px;
+    }
+h4 { position: absolute;
+left:50px;
+top:680px; 
+}
+form { position: absolute;
+left:50px;
+top:820px; 
+}
+.btn {
+position: absolute;
+left: 50px;
+top: 880px;
+
+
+}
+	</style>
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+$(document).ready(function(){
+   $("#waat").click(function(){
+   $("#waat").animate({left:1000},1600);
+   });
+   $( function() {
+    $( "myimg" ).draggable();} );
+  $( function() {
+    $( "#myimg" ).draggable();} );
+
+
+   $("#ill").click (function() {
+	 $("#ill").animate ({top:560, left:50}, 100);
+	 $("#ill").animate ({top:630, left:50}, 100);
+	 $("#ill").animate ({top:660, left:110}, 100);
+	 $("#ill").animate ({top:660, left:170}, 100);
+	 $("#ill").animate ({top:630, left:230}, 100);
+	 $("#ill").animate ({top:560, left:230}, 100);
+	 $("#ill").animate ({top:490, left:230}, 100);
+	 $("#ill").animate ({top:430, left:170}, 100);
+	 $("#ill").animate ({top:430, left:110}, 100);
+	 $("#ill").animate ({top:500, left:50}, 100);      //
+	 $("#ill").animate ({top:430, left:110}, 100);
+	 $("#ill").animate ({top:430, left:170}, 100);
+	 $("#ill").animate ({top:490, left:230}, 100);
+ 	 $("#ill").animate ({top:560, left:230}, 100);
+	 $("#ill").animate ({top:630, left:230}, 100);
+	 $("#ill").animate ({top:660, left:170}, 100);
+	 $("#ill").animate ({top:660, left:110}, 100);
+     $("#ill").animate ({top:630, left:50}, 100);
+     $("#ill").animate ({top:560, left:50}, 100);
+});
+
+$('#graph').click(function() {	
+var func=Number(document.forms.frm.s.value);
+ var clr = document.forms.frm.color.value;   
+ if (clr == 9)
+var fille = "yellow.bmp";
+if (clr == 99) 
+var fille="purple.bmp";
+if (clr == 999)
+var fille = "blue.bmp";                                      //4,5
+  switch(func) {
+  case 1:{
+var x = 400; var x2 = 840; var xl = -17;
+var draw = setInterval(function() {
+var kv = x - (xl * xl);
+var xstr = " <img src=\""+ fille + "\" heigth=\"3px\" width=\"3px\" style = \"position:absolute;" + " top:" + kv + "px; left: " + x + "px\" />";
+x++;
+xl = xl + 0.1;
+document.write(xstr);
+if (x >= x2)
+clearInterval(draw);
+}, 13);
+}; break;
+ 
+  case 2: { 
+var x = 600; var x2 = 725; var xl = -6; var kv = 0; var y = 0;
+var draw = setInterval(function() {
+var y = Math.pow(xl,3);
+var xstr = " <img src=\""+ fille + "\" heigth=\"3px\" width=\"3px\" style = \"position:absolute;" + " top:" + (-(y) + 350) + "px; left: " + x + "px\" />";
+x++;
+xl = xl + 0.1;
+document.write(xstr);
+if (x >= x2)
+clearInterval(draw);
+}, 20);
+}; break;
+ 
+  case 3: { 
+ var x = 500; var x2 = 810; var xl = -20;
+var draw = setInterval(function() {
+var kv = Math.sin(xl) * 15;
+var xstr = " <img src=\""+ fille + "\" heigth=\"3px\" width=\"3px\" style = \"position:absolute;" + " top:" + (kv + 300) + "px; left: " + x + "px\" />";
+x++;
+xl = xl + 0.1;
+document.write(xstr);
+if (x >= x2)
+clearInterval(draw);
+}, 15);
+}; break;
+ 
+  case 4: {
+var x = 500; var x2 = 810; var xl = -20;
+var draw = setInterval(function() {
+var kv = Math.cos(xl) * 15;
+var xstr = " <img src=\""+ fille + "\" heigth=\"3px\" width=\"3px\" style = \"position:absolute;" + " top:" + (kv + 300) + "px; left: " + x + "px\" />";
+x++;
+xl = xl + 0.1;
+document.write(xstr);
+if (x >= x2)
+clearInterval(draw);
+}, 15);
+}break;
+}
+});
+
+
+
+
+
+});
+</script>
+</head>	
+<body>
+ <img id="myimg" src="ell.jpg" style="position:absolute; top:50px; left:50px; height:150px; width:150px;" draggable="true"/>
+  <textarea id="text" style="position:absolute; top: 100px; left:300px" ondblclick="txt(this)">Перемещаемый элемент TEXTAREA</textarea>
+  <img id="waat" src="cens.png" style="position:absolute; top:300px; left:50px; width:150px; height:150px;" />	
+  <img id = "ill" src = "try.png" style ="position:absolute; left:50px; top:500px; height:150px; width:150px;"/>
+  <h4> Выберите функцию и цвет</h4>
+  <form class="foorm" name="frm">
+   <input type="radio" name='s' value='1'/>y=x^2</br>
+    <input type="radio" name='s' value='2'/>y=x^3</br>
+    <input type="radio" name='s' value='3'/>y=sin(x)</br>
+    <input type="radio" name='s' value='4'/>y=cos(x) </br>	
+    <select id='select' style="color:rgb(71, 63, 63); font-family:arial; border: green 5px solid; margin:10px;" name="color">
+      <option value="9"> жёлтый </option>
+      <option value="99"> фиолетовый </option>
+      <option value="999"> синий</option>
+    </select><br/>
+  </form>
+  <input type="button" id="graph" value='Нарисовать' style="margin:5px; font-family:Arial;" class="btn" />
+  </form>
+</body>
+
+<script type="text/javascript">
+var text=document.getElementById("text");
+
+//$("#text").dblclick(function() {
+  //  $(document).mousemove(function(){
+    //    $("#text").css('left', event.clientX - text.offsetWidth / 2 + 'px' );
+     // $("#text").css('top', event.clientY - text.offsetHeight / 2 + 'px');
+   // })
+ //$(document).mousedown(function() {
+   //    $(document).mousemove = null;
+    //  $(document).mouseup = null;
+  //});
+  //});
+var t = document.getElementById("text");
+function txt(element) {
+document.onmousemove = function() {
+ element.style.top =  event.clientY - t.offsetHeight / 2 +"px";
+ element.style.left =  event.clientX - t.offsetWidth / 2 + "px";
+}
+ t.onmouseup = function() {
+      document.onmousemove = null;
+      document.onmouseup = null;
+  }
+  }
+
+</script>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+#nav {border: 3px dotted darkblue;
+width: 300px;
+font-size: 40px;
+margin-left:auto;
+margin-right: auto;
+text-align: center;
+}
+div > div > div {
+	display: none;
+	color: darkorchid;
+}
+div > div {
+	float: bottom;
+	color: orangered;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	animation: asd 16s linear infinite;
+}
+body {
+    font-family: Arial, sans-serif;
+    }
+    @keyframes asd {
+0% { color: red;}
+14% { color: orange; }
+28% { color:yellow; }
+42% {color: green;}
+56% {color: skyblue;}
+70% {color: navy;}
+84% {color: purple;}
+98% {color: red;}
+}
+a { text-decoration: none; }
+a:active {color: fuchsia;
+}
+</style>
+	<title> Меню </title>
+
+</head>
+<body>
+<div id="nav">
+<div id="menu-item1">
+ Лаб.р. №5
+<div id="submenu1">
+<a href="D:\ЛАБЫ\JS\проекты\№5\lab5all.html">DOM</a>
+</div></div>
+<div id="menu-item2">
+  Лаб.р. №6
+<div id="submenu2">
+<a href="D:\ЛАБЫ\JS\проекты\№6\task.html">BOM</a>
+</div></div>
+<div id="menu-item3">
+ Лаб.р. №8
+<div id="submenu3">
+<a href="D:\ЛАБЫ\JS\проекты\№8\taskk.html">События</a>
+</div>
+</div>
+</div>
+</body>
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#menu-item1").click(function(){
+$("#submenu1").slideToggle(300);
+});
+$("#menu-item2").click(function(){
+$("#submenu2").slideToggle(300);
+});
+$("#menu-item3").click(function(){
+$("#submenu3").slideToggle(300);
+});
+});
+	
+
+</script>
+</html>

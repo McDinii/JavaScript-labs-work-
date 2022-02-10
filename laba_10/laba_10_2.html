@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<style type="text/css">
+	p { text-align: center;
+	font-size: 30px;
+	}
+body {
+	background-color: khaki;
+}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Jquery</title>
+	<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+  <script> 
+  	$(document).ready(function(){
+    $("#one").mouseover(function(){
+        $("#one").css('color',"green");
+    });
+
+    $("#two").click(function(){
+        $("#two").css('font-size',"70px");
+    });
+
+    $("#ig").click(function(){
+        $(this).attr('src',"dollar.png");
+    });
+
+    $("#texxt").click(function(){
+    $(this).html("<img src=\"fit.jpg\" height=\"200px\" width=\"200px\">")
+    });
+
+    $("#last").dblclick(function(){
+        $(this).css('border',"5px dotted skyblue");
+    });
+
+    $("#imjj").mouseover(function(){
+    $(this).css('height',"400px");
+     $(this).css('width',"400px");
+    });
+    $("#imjj").mouseout(function(){
+    $(this).css('height',"300px");
+     $(this).css('width',"300px");
+    });
+
+});
+</script>
+<script type="text/javascript">
+    
+
+    
+</script>
+</head>
+<body>
+<p id="one"> Изменение цвета слов в тексте </p>	
+<p id="two"> Изменение шрифта слов нажатием мыши </p>
+<p> Замена одной картинки на другую по щелчку мыши </p>
+<img id = "ig" src="cherry.jpg" height="200px" width="200px" style="margin-left: 560px;" >
+<p id="texxt"> Замена текста изображением </p>
+<p> Изменение размера рисунка при наведении мыши и возврат к начальному значению при уходе курсора </p>
+<img id="imjj" src="js.png" height="300px" width="300px" style="margin-left: 515px">
+<p id="last"> Появление границы вокруг обзаца после двойного клика </p>	
+</body>
+</html>
